@@ -1,0 +1,44 @@
+
+<!--Navbar-->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-info">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="/">
+      <span class="sr-only">(current)</span>
+  </a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="basicExampleNav">
+
+    <ul class="navbar-nav ml-auto">
+      <a class="nav-link text-white pr-4" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.allBlogs')}}">Blogs</a>
+
+      <a class="nav-link text-white pr-5" aria-haspopup="true" aria-expanded="false" href = "{{url_for('main.newBlog')}}">AddNewblog</a>
+      {% if current_user.is_authenticated %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false" href = "/">{{current_user.username}}</a>
+        <div aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="{{url_for('main.profile',uname = current_user.username)}}">Profile</a>
+          <!-- <a class="dropdown-item" href="{{url_for('auth.logout')}}">Logout</a> -->
+          <a style= 'margin-right:30px; color: white; font-weight: bold' class="navbar-link" href="{{url_for('auth.logout')}}"><i class="fas fa-sign-out-alt"></i>&nbsp; Log out</a>
+          
+
+          {% else %}
+          <a style= 'margin-right:30px' class="nav-link" href="{{url_for('auth.login')}}" style= 'margin-right:30px'><i class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a>
+          {%endif%}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</nav>
+
+
+
+

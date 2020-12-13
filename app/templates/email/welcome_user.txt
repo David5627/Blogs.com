@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Blog-World
+We have just seen you have signed up to our Blog-World.

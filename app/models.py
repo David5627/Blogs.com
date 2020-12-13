@@ -88,7 +88,11 @@ class Comment(db.Model):
         db.session.delete(self)
         db.session.commit()
     def __repr__(self):
-        return f'Comments: {self.comment}'        
+        return f'Comments: {self.comment}' 
+
+       
+
+
 
 
     

@@ -11,7 +11,7 @@
 
     {% if user.profile_pic_path %}
 
-  <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+  <img src="{{url_for('static',filename=user.profile_pic_path)}}" class="rounded-circle account-img mt-3" alt="" width="200px">
 
   {%else%}
   <p>No profile picture</p>

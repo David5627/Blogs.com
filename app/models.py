@@ -10,7 +10,7 @@ def load_user(user_id):
 
 class Quote:
     def __init__(self,id,author,quote):
-        self.id =id
+        self.id = id
         self.author = author
         self.quote = quote
 
@@ -26,11 +26,11 @@ class User(UserMixin,db.Model):
     pass_secure = db.Column(db.String(255))
     blog = db.relationship('Blog', backref ='user', passive_deletes=True,lazy = "dynamic")
     comments = db.relationship('Comment', backref ='user' , passive_deletes=True,  lazy ="dynamic")
-    # phonenumbers = db.Column(db.String(255))
+    # phonenumber = db.Column(db.String(255))
 
     @property
     def password(self):
-        raise AltributeError('You cannot read the password attribute')
+        raise AltributeError('You cant read the password attribute')
 
     @password.setter
     def password(self, password):

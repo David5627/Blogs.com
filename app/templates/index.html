@@ -1,13 +1,21 @@
 {% extends 'base.html'%}
 {% block content %}
-<h2 style="text-align: center;">Here are Blogs interact together with Interactive Quotes.</h2><br><br><br><br><br><br><br>
+<h2 style="text-align: center;">Here are Blogs interact together with Interactive Quotes.</h2><br><br><br><br><br><br><br><br><br><br>
 <h2><p style="text-align: center;" >[Quotes zone]</p></h2>
 <hr>
 <div style="text-align: center; font-size: 100%;">
+
+
     {% for quote in getquotes %}
     <h3><p>{{quote.quote}}</p></h3>
     <h4><p class="text-danger">Written By: {{quote.author}}</p></h4>
     {% endfor %}
+    <p style="display: block;">For more info click on the link below to subscribe</p>
+<button class="btn btn-info" type="button">
+    <a href="{{url_for('main.subscriber',uname = current_user.username)}}">Subscribe Here</a>
+</button>
+   
+
 
 </div>
 <style>
@@ -15,7 +23,5 @@
         background-image: url("../static/AVID-BLOGS-FEATURED-IMAGE.jpg");
         color: white;
     }
-
-
 </style>
 {% endblock %}

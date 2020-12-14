@@ -1,0 +1,15 @@
+
+{% extends 'base.html'%}
+{% block content %}
+<h3 style="text-align: center;">Welcome to my Blog page.</h3><br><br><br>
+<p style="text-align: center;" >Refresh for more quotes</p>
+<hr>
+<div style="text-align: center; font-size: 100%;">
+    {% for quote in getquotes %}
+    <p>{{quote.quote}}</p>
+    <p class="text-danger">Written By: {{quote.author}}</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,12 +1,12 @@
 {% extends 'base.html'%}
 {% block content %}
-<h3 style="text-align: center;">Welcome to my Blog page.</h3><br><br><br>
-<p style="text-align: center;" >Refresh for more quotes</p>
+<h2 style="text-align: center;">Here are Blogs interact together with Interactive Quotes.</h2><br><br><br><br><br><br><br>
+<h2><p style="text-align: center;" >[Quotes zone]</p></h2>
 <hr>
 <div style="text-align: center; font-size: 100%;">
     {% for quote in getquotes %}
-    <p>{{quote.quote}}</p>
-    <p class="text-danger">Written By: {{quote.author}}</p>
+    <h3><p>{{quote.quote}}</p></h3>
+    <h4><p class="text-danger">Written By: {{quote.author}}</p></h4>
     {% endfor %}
 
 </div>
@@ -16,6 +16,6 @@
         color: white;
     }
 
-    
+
 </style>
 {% endblock %}
